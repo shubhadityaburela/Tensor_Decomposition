@@ -52,23 +52,23 @@ class Parameters:
 
     degree: np.ndarray = np.asarray([2, 1, 2])  # We use a linear polynomial for the first and last frame and a constant for the middle frame
     degree_st: np.ndarray = np.asarray([0, 2, 3, 5])  # Just to get the indexing access of the array right
-    beta_init = [[0.1, -0.5], [0], [-0.8, 1.0]]  # Initial guess value for the coefficients of the shifts
+    beta_init = [[0.11, -0.5], [0], [-0.11, -0.5]]  # Initial guess value for the coefficients of the shifts
     type_shift = ["polynomial", "polynomial", "polynomial"]  # We use polynomial shifts for all the frames
 
     alpha_init: np.ndarray = None
-    alpha_solver_ck: float = 1e8
+    alpha_solver_ck: float = 1e7
     alpha_solver_lamda_1: float = 1e-3
 
     beta_solver_dk: float = 1.0
-    beta_solver_tau: np.ndarray = np.asarray([1e-8, 1e-8, 1e-8, 1e-8, 1e-8])
+    beta_solver_tau: np.ndarray = np.asarray([5e-7, 5e-7, 1e-3, 5e-7, 5e-7])
     beta_solver_sigma: np.ndarray = 0.99 / beta_solver_tau
     beta_solver_lamda_2: float = 1e-3
     beta_solver_rho_n: float = 1.0
     beta_solver_gtol: float = 1e-3
-    beta_solver_maxit: int = 5
+    beta_solver_maxit: int = 10
 
-    gtol: float = 1e-8
-    maxit: int = 100000
+    gtol: float = 1e-10
+    maxit: int = 42287
 
 
 if __name__ == '__main__':
